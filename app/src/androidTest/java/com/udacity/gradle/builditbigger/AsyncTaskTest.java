@@ -18,7 +18,7 @@ public class AsyncTaskTest extends AndroidTestCase {
                     // empty handler
                 }
             });
-            joke = jokeTask.get(15, TimeUnit.SECONDS);
+            joke = jokeTask.get(30, TimeUnit.SECONDS);
         } catch (Exception e) {
             Log.e(LOG_TAG, e.getMessage());
         }

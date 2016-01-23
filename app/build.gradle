@@ -40,9 +40,3 @@ dependencies {
 
     compile project(path: ':backend', configuration: 'android-endpoints')
 }
-
-task runTestsWithBackend() {
-    dependsOn "connectedCheck"
-    connectedCheck.mustRunAfter tasks.getByPath(":backend:appengineRun")
-    finalizedBy tasks.getByPath(":backend:appengineStop")
-}

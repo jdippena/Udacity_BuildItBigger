@@ -17,3 +17,9 @@ allprojects {
         jcenter()
     }
 }
+
+task runTestsWithBackend() {
+    dependsOn ":app:connectedCheck"
+    tasks.getByPath(":app:connectedCheck").mustRunAfter tasks.getByPath(":backend:appengineRun")
+    finalizedBy tasks.getByPath(":backend:appengineStop")
+}
